@@ -1,4 +1,13 @@
+.darkTheme {
+  background: #333;
+  color: #fff;
+}
+
 h1 {
     font-weight: lighter;
     font-style: italic;
+  }
+
+  .link {
+    color: white;
   }
