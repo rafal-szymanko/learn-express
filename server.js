@@ -35,7 +35,7 @@ app.get('/hello/:name', (req, res) => {
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use((req, res) => {
-  res.status(404).send('404 not found...');
+  res.status(404).render('404', {layout: 'dark'});;
 })
 
 app.listen(8000, () => {
