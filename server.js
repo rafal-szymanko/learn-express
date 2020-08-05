@@ -2,6 +2,10 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
+const hbs = require('express-handlebars');
+
+app.engine('hbs', hbs());
+app.set('view engine', 'hbs');
 
 
 app.use((req, res, next) => {
@@ -29,6 +33,10 @@ app.get('/info', (req, res) => {
 
 app.get('/history', (req, res) => {
   res.show('history.html');
+});
+
+app.get('/hello/:name', (req, res) => {
+  res.render('hello', { layout: false, name: req.params.name });
 });
 
 app.use(express.static(path.join(__dirname, '/public')));
