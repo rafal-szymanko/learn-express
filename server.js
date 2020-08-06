@@ -62,6 +62,7 @@ app.get('/hello/:name', (req, res) => {
   });
 });
 
+
 app.post('/contact/send-message', upload.single('image'), (req, res, cb) => {
 
   const {
@@ -81,7 +82,7 @@ app.post('/contact/send-message', upload.single('image'), (req, res, cb) => {
     res.render('contact', {
       isSent: true,
       imgName: originalname,
-      fileName: filename,
+      fileName: `/${filename}`,
     });
   } else {
     res.render('contact', {
