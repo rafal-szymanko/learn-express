@@ -78,7 +78,7 @@ app.post('/contact/send-message', upload.single('image'), (req, res, cb) => {
   } = req.file;
 
 
-  if (author && sender && title && message) {
+  if (author && sender && title && message && originalname) {
     res.render('contact', {
       isSent: true,
       imgName: originalname,
